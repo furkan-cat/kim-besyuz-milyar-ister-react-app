@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { login, loadingStart, loadingEnd } from "../../actions/index";
+import { useDispatch } from "react-redux";
+import { login } from "../../actions/index";
 import { useHistory } from "react-router-dom";
-
+// import mp3 from "../../assets/Ezel.mp3";
 import "./Login.scss";
 
 const Login = () => {
-  
-
   const [form, setForm] = useState({ name: "", surname: "" });
   let history = useHistory();
 
@@ -19,20 +17,11 @@ const Login = () => {
   };
 
   const handleSubmit = (e) => {
-    // dispatch(loadingStart());
-    // setTimeout(() => {
-    //   dispatch(loadingEnd());
-    // }, 2000);
-
     e.preventDefault();
     dispatch(login(form));
     setForm(initialValue);
 
     history.push("/loading");
-  };
-
-  const handleClick = () => {
-    
   };
 
   return (
@@ -47,10 +36,13 @@ const Login = () => {
             Surname:
           </label>
           <input name="surname" onChange={handleChange} value={form.surname} />
-          <button type="submit" className="button" onClick={handleClick}>
+          <button type="submit" className="button">
             Log In
           </button>
         </form>
+        {/* <audio controls autoPlay>
+          <source src={mp3} type="audio/mp3" />
+        </audio> */}
       </div>
     </React.Fragment>
   );

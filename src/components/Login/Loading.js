@@ -1,7 +1,8 @@
-import React from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login, loadingStart, loadingEnd } from "../../actions/index";
+import { loadingStart, loadingEnd } from "../../actions/index";
+import CircleLoader from "react-spinners/CircleLoader";
+import "./Loading.scss";
 
 function Loading() {
   const dispatch = useDispatch();
@@ -14,7 +15,13 @@ function Loading() {
     dispatch(loadingEnd());
   }, 3000);
 
-  return <div>{isLoading && <div>Loading...</div>}</div>;
+  return (
+    <div className="loading">
+      {isLoading && (
+        <CircleLoader color={"#813F93"} isLoading={isLoading} size={80} />
+      )}
+    </div>
+  );
 }
 
 export default Loading;

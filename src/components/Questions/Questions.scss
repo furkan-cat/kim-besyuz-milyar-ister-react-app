@@ -1,0 +1,40 @@
+.wrapper {
+  width: calc(100% / 2);
+  // min-height: 5em;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5em 3em 5em;
+}
+
+.question-container {
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  background-color: #fdf6f0;
+}
+
+.answer-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.6em;
+}
+
+.answer {
+  width: 50%;
+  background-color: #fdf6f0;
+  padding: 1em;
+  border-radius: 4px;
+  text-align: start;
+}
+
+.answers:hover {
+  background-color: blue;
+}
+
+.answers:nth-child(even) {
+  margin-left: 2em;
+}
+
+.active {
+  background-color: red;
+}

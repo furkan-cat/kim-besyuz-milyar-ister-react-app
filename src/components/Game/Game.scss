@@ -1,4 +1,33 @@
-.game {
+.game-wrapper {
+  width: 100%;
+  height: 100vh;
   background-color: wheat;
   font-size: 30px;
+  // background-image: linear-gradient(
+  //   to bottom right,
+  //   #de354c,
+  //   #3b1874d8,
+  //   #283747,
+  //   #3b1874d8,
+  //   #de354c
+  // );
+
+  background-image: url("../../assets/background.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  // width: 75%;
 }
+
+// .container {
+//   background-color: red;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .question-container {
+//   display: flex;
+//   justify-content: center;
+//   width: 650px;
+// }

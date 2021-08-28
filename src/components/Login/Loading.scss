@@ -1,0 +1,16 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  //   background-color: #8559a3c0;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom right,
+    #de354c,
+    #3b1874d8,
+    #283747,
+    #3b1874d8,
+    #de354c
+  );
+}

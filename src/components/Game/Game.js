@@ -1,13 +1,13 @@
-import { useSelector } from "react-redux";
+import React from "react";
+import Questions from "../Questions/Questions";
+import Prize from "../Prize/Prize";
 import "./Game.scss";
 
 function Game() {
-  const isLoading = useSelector((state) => state.loading);
-
   return (
-    <div>
-      {}
-      <div className="game">You're logged in!</div>
+    <div className="game-wrapper">
+      <Questions />
+      <Prize />
     </div>
   );
 }
