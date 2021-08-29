@@ -10,7 +10,7 @@
   padding: 1em;
   margin-bottom: 1em;
   border-radius: 4px;
-  background-color: #fdf6f0;
+  background-color: rgb(31, 31, 143);
 }
 
 .answer-container {
@@ -21,20 +21,38 @@
 
 .answer {
   width: 50%;
-  background-color: #fdf6f0;
+  background: #22074d;
   padding: 1em;
   border-radius: 4px;
   text-align: start;
 }
 
-.answers:hover {
-  background-color: blue;
+.answer:hover {
+  background: rgb(41, 41, 194);
 }
 
-.answers:nth-child(even) {
-  margin-left: 2em;
-}
+// .answer:nth-child(even) {
+//   margin-left: 2em;
+// }
 
 .active {
-  background-color: red;
+  background-color: #aebec5;
+  animation: active 3s 1.5s forwards;
+}
+
+@keyframes active {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: green;
+  }
 }

@@ -34,7 +34,7 @@ function Prize() {
           <div className="money">$ 8.000</div>
         </div>
         <div>
-          <div >08</div>
+          <div>08</div>
           <div className="money">$ 4.000</div>
         </div>
         <div>

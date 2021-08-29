@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  q: [],
+  data: [],
   message: "",
   answers: [],
 };
@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 const fetchReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "GET_QUESTIONS":
-      return { ...state, q: action.payload };
+      return { ...state, data: action.payload };
     case "FETCH_ERROR":
       return { ...state, message: action.payload };
     case "GET_ANSWERS":

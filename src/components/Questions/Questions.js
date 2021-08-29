@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetching, increment } from "../../actions/index";
+import { fetching } from "../../actions/index";
 import "./Questions.scss";
 
 const Questions = () => {
-  const { answers, q } = useSelector((state) => state.fetching);
-  const [numberOfPage, setNumberOfPage] = useState(null);
+  const { data, answers } = useSelector((state) => state.fetching);
+  const { question_num } = useSelector((state) => state.question);
+
   const [selected, setSelected] = useState(null);
   const dispatch = useDispatch();
 
@@ -15,15 +16,23 @@ const Questions = () => {
 
   const handleClicked = (x) => {
     setSelected(x);
+    setTimeout(() => {
+      dispatch({ type: "QUESTION_NUMBER", payload: question_num + 1 });
+    }, [4000]);
+    // setTimeout(() => {}, []);
   };
 
+  console.log(data);
+  // data = data[0];
+  // console.log(data[0]);
   return (
     <div className="wrapper">
       <div className="question-container">
         <div>
-          {q.map((user, i) => (
-            <div key={i}>{user.question}</div>
-          ))}
+          {data.length !== 0 &&
+            data.map((user, i) => (
+              <div key={i}>{user[question_num].question}</div>
+            ))}
         </div>
       </div>
       <div className="answer-container">
@@ -40,9 +49,6 @@ const Questions = () => {
           </React.Fragment>
         ))}
       </div>
-
-      <div className="answer-container--2"></div>
-      <button onClick={() => dispatch(increment(0))}>Next</button>
     </div>
   );
 };

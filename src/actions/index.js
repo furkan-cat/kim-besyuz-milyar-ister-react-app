@@ -1,7 +1,6 @@
 import axios from "axios";
-// import { useSelector } from "react-redux";
-// import { useEffect } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 export const login = (form) => {
   return {
     type: "LOGIN_TYPE",
@@ -19,14 +18,8 @@ export const loadingEnd = () => {
 
 export const fetching = () => async (dispatch) => {
   try {
-    // const inc = useSelector((state) => state.increment);
-    // useEffect(() => {
-    //   console.log(inc);
-    // }, [inc]);
-
     const response = await axios.get("https://opentdb.com/api.php?amount=15");
-    console.log(response);
-    const questions = [response.data.results[0]];
+    const questions = [response.data.results];
     const arr = [
       {
         data: response.data.results[0].incorrect_answers[0],
@@ -40,8 +33,6 @@ export const fetching = () => async (dispatch) => {
       { data: response.data.results[0].correct_answer, correct: true },
     ];
 
-    // response.data.results[0].correct_answer[0]
-
     function mix(arr) {
       let i = arr.length,
         temp;
@@ -53,8 +44,7 @@ export const fetching = () => async (dispatch) => {
       }
       return arr;
     }
-    let answers = mix(arr);
-    // console.log(answers);
+    const answers = mix(arr);
 
     dispatch({
       type: "GET_QUESTIONS",
