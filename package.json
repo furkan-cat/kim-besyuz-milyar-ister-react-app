@@ -17,6 +17,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
     "sass": "^1.35.1",
+    "use-sound": "^4.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

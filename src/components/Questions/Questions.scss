@@ -20,27 +20,29 @@
 }
 
 .answer {
-  width: 50%;
-  background: #22074d;
-  padding: 1em;
-  border-radius: 4px;
-  text-align: start;
+  width: 45%;
+  padding: 10px;
+  margin: 0 1px 0px 1px;
+  text-align: center;
+  // background: linear-gradient(#0e0124, #22074d);
+  background: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.answer:hover {
-  background: rgb(41, 41, 194);
+.answer:hover,
+.answer.active {
+  background: mediumblue;
 }
 
-// .answer:nth-child(even) {
-//   margin-left: 2em;
-// }
-
-.active {
-  background-color: #aebec5;
-  animation: active 3s 1.5s forwards;
+.answer.correct {
+  animation: correct 3s ease forwards;
 }
 
-@keyframes active {
+@keyframes correct {
   0%,
   22%,
   42% {
@@ -54,5 +56,26 @@
   62%,
   100% {
     background: green;
+  }
+}
+
+.answer.wrong {
+  animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: crimson;
   }
 }

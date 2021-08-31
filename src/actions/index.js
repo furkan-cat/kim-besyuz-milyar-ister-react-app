@@ -20,31 +20,35 @@ export const fetching = () => async (dispatch) => {
   try {
     const response = await axios.get("https://opentdb.com/api.php?amount=15");
     const questions = [response.data.results];
-    const arr = [
-      {
-        data: response.data.results[0].incorrect_answers[0],
-        correct: false,
-      },
-      {
-        data: response.data.results[0].incorrect_answers[1],
-        correct: false,
-      },
-      { data: response.data.results[0].incorrect_answers[2], correct: false },
-      { data: response.data.results[0].correct_answer, correct: true },
-    ];
+    const answers = [response.data.results];
+    // console.log(answers[0].length);
+    
+    // const arr = [
+    //   {
+    //     data: response.data.results[0].incorrect_answers[0],
+    //     correct: false,
+    //   },
+    //   {
+    //     data: response.data.results[0].incorrect_answers[1],
+    //     correct: false,
+    //   },
+    //   { data: response.data.results[0].incorrect_answers[2], correct: false },
+    //   { data: response.data.results[0].correct_answer, correct: true },
+    // ];
 
-    function mix(arr) {
-      let i = arr.length,
-        temp;
-      while (i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-      }
-      return arr;
-    }
-    const answers = mix(arr);
+    // function mix(arr) {
+    //   let i = arr.length,
+    //     temp;
+    //   while (i--) {
+    //     const j = Math.floor(Math.random() * (i + 1));
+    //     temp = arr[i];
+    //     arr[i] = arr[j];
+    //     arr[j] = temp;
+    //   }
+    //   return arr;
+    // }
+    // const answers = mix(arr);
+    // console.log(answers)
 
     dispatch({
       type: "GET_QUESTIONS",

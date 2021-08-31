@@ -4,7 +4,7 @@ import { loadingStart, loadingEnd } from "../../actions/index";
 import CircleLoader from "react-spinners/CircleLoader";
 import "./Loading.scss";
 
-function Loading() {
+const Loading = () => {
   const dispatch = useDispatch();
   let history = useHistory();
   let isLoading = useSelector((state) => state.loading);
@@ -22,6 +22,6 @@ function Loading() {
       )}
     </div>
   );
-}
+};
 
 export default Loading;
